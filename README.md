@@ -3,14 +3,7 @@
 # Dolly the robot
 
 _It's a sheep, it's a dolly, it's a following robot. Born to be cloned._
-
-Packages for launching Dolly demo, which uses ROS 2 and either
-[Gazebo](https://gazebosim.org) or [Ignition](https://ignitionrobotics.org).
-
-Gazebo | Ignition
--- | --
-![Dolly Gazebo](images/dolly.gif) | ![Dolly Ignition](images/dolly_ign.gif)
-
+ 
 ## Versions
 
 Dolly is known to work on the following systems.

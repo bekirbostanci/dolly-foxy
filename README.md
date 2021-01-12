@@ -1,19 +1,18 @@
 [![Build Status](https://travis-ci.org/chapulina/dolly.svg?branch=master)](https://travis-ci.org/chapulina/dolly)
+# Important 
 
-# Dolly the robot
+This is not original dolly repository. 
+[original_repo](https://github.com/chapulina/dolly)
 
-_It's a sheep, it's a dolly, it's a following robot. Born to be cloned._
- 
-## Versions
+# Changes 
 
-Dolly is known to work on the following systems.
-
-Branch | ROS | Gazebo-classic | Ignition | OS
--- | -- | -- | -- | --
-[crystal](https://github.com/chapulina/dolly/tree/crystal) | Crystal | Gazebo 9 | :x: | Ubuntu Bionic
-[dashing](https://github.com/chapulina/dolly/tree/dashing) | Dashing | Gazebo 9 | :x: | Ubuntu Bionic, macOS Sierra
-[eloquent](https://github.com/chapulina/dolly/tree/eloquent) | Eloquent | Gazebo 9, Gazebo 11 | Citadel | Ubuntu Bionic
-[foxy](https://github.com/chapulina/dolly/tree/foxy) | Foxy | Gazebo 11 | Citadel | Ubuntu Focal
+* Created dolly_description package
+* SDF File  
+    * Changed wheels pose 
+    * 2 caster wheel 
+    * Changed robot dimentions 
+    * Changed laser range finder configuration  
+* Created urdf files 
 
 ## Packages
 
@@ -22,26 +21,7 @@ This repository contains the following packages:
 * `dolly`: Metapackage which provides all other packages.
 * `dolly_follow`: Provides node with follow logic.
 * `dolly_gazebo`: Robot model, simulation world and launch scripts for Gazebo-classic.
-* `dolly_ignition`: Robot model, simulation world and launch scripts for Ignition.
-
-## Install
-
-It's encouraged that you build Dolly from source, to learn about how to
-develop your own packages. But in case you just want to give it a quick
-try, there are binaries available too.
-
-### From binaries
-
-Dolly has been released into several ROS distros:
-
-| ROS      | Packages                    |
-|----------|-----------------------------|
-| Dashing  | `ros-dashing-dolly`         |
-|          | `ros-dashing-dolly-follow`  |
-|          | `ros-dashing-dolly-gazebo`  |
-| Eloquent | `ros-eloquent-dolly`        |
-|          | `ros-eloquent-dolly-follow` |
-|          | `ros-eloquent-dolly-gazebo` |
+* `dolly_description`: Robot model URDF file, robot state publisher .
 
 ### From source
 
@@ -59,10 +39,6 @@ Install instructions for Ubuntu Bionic.
         mkdir -p ~/ws/src
         cd ~/ws/src
         git clone https://github.com/chapulina/dolly -b <distro>
-
-1. Ignition only, for Eloquent and earlier, clone the bridge:
-
-        git clone https://github.com/ignitionrobotics/ros_ign -b <distro>
 
 1. Install dependencies:
 
@@ -103,31 +79,4 @@ should be enabled.
 
         ros2 launch dolly_gazebo dolly.launch.py world:=dolly_empty.world
 
-### Ignition
-
-1. Setup environment variables:
-
-        . ~/ws/install/setup.bash
-
-    > *Tip*: If the command `ros2 pkg list | grep dolly_ignition` comes up empty
-      after setting up the environment, Ignition support wasn't correctly setup.
-
-1. Launch Dolly in a station:
-
-        ros2 launch dolly_ignition dolly.launch.py
-
-## Featured
-
-* QConSF 2018
-    * 🎥 [Open Source Robotics: Hands on with Gazebo and ROS 2](https://www.youtube.com/watch?v=Gwbk6Qf_TqY)
-    * ⌨️ [Source code](https://github.com/chapulina/simslides/tree/QConSF_Nov2018)
-* InfoQ
-    * 📰 [Open Source Robotics: Getting Started with Gazebo and ROS 2](https://www.infoq.com/articles/ros-2-gazebo-tutorial/)
-* ROS Developers Live Class
-    * 🎥 [#70 How to Control a Robot with ROS2 (Dashing)](https://www.youtube.com/watch?v=qB4SaP3TZog)
-    * 🎥 [#71 How to visualize sensor data in ROS2](https://www.youtube.com/watch?v=s3fBGSpmER0)
-* ROSConJP 2019
-    * 🎥 [これからのGazebo: ROSのシミュレーションの次世代](https://vimeo.com/370247782)
-    * ⌨️ [Source code](https://github.com/chapulina/rosconjp_2019)
-* ROS Developers Day 2020
-    * 🎥 [Hands-on with Ignition and ROS2](https://youtu.be/nLp4uzN5NMs?t=622)
+  

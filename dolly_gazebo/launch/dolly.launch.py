@@ -20,14 +20,13 @@ def generate_launch_description():
     world_file_name = 'dolly_empty.world'
     world = os.path.join(get_package_share_directory('dolly_gazebo'), 'worlds', world_file_name)
     launch_file_dir = os.path.join(get_package_share_directory('dolly_gazebo'), 'launch')
-    pkg_dolly_gazebo = get_package_share_directory('dolly_gazebo')
-
+    pkg_dolly_description= get_package_share_directory('dolly_description')
 
     # RViz
     rviz = Node(
         package='rviz2',
         executable='rviz2',
-        arguments=['-d', os.path.join(pkg_dolly_gazebo, 'rviz', 'dolly.rviz')],
+        arguments=['-d', os.path.join(pkg_dolly_description, 'rviz', 'dolly_gazebo.rviz')],
         condition=IfCondition(LaunchConfiguration('rviz'))
     )
 

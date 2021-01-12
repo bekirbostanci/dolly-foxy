@@ -21,9 +21,7 @@ install(
   DIRECTORY
     launch
     models
-    rviz
     worlds
-    urdf
   DESTINATION
     share/${PROJECT_NAME}/
 )

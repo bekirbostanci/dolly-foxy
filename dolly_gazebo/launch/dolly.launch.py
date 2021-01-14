@@ -41,5 +41,5 @@ def generate_launch_description():
         ),
         DeclareLaunchArgument('rviz', default_value='true',
                               description='Open RViz.'),
-        rviz
+        
     ])
